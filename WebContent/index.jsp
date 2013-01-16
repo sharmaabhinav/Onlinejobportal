@@ -7,6 +7,8 @@
 	<title>Online Job Portal</title>
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css"/>
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-responsive.css"/>
+	
+	
 	<style>
 			.navbar .navbar-inner .nav > li > a{
 				color : black;
@@ -21,12 +23,31 @@
 			.body {
 				margin-top : 2%
 			}
+			.form {
+				background-image : url('_images/form_background2.gif');
+				background-repeat:no-repeat;
+				background-size : 100% 100%
+			}
+			.footer {
+				background-color: yellow;
+				height : 10%;
+			}
 			
 	</style>
+	
 	<script src="_javascript/jquery.js"></script>
 	<script src="_javascript/jquery-ui.js"></script>
+	<script src="_javascript/boot.js"></script>
+	<script src="_javascript/modal.js"></script>
+	
+	
 	<script>
-		$("#radio").buttonset();
+		$(document).tooltip();
+		
+		function render(page){
+			window.location = page + ".jsp";
+				
+		}
 	</script>
 	
 	 
@@ -36,6 +57,9 @@
 <body>
     
     <div class = "container-fluid header">
+    	   	
+    	
+    	
     	<div class = "row-fluid " >
     		
     		<div class = 'span2'>
@@ -50,8 +74,7 @@
       						    	<li><a href="#">About</a></li>
       								<li class = "divider-vertical"></li>
       								<li><a href="#">How It Works</a></li>
-      								<li class = "divider-vertical"></li>
-      								<li><a href="#">Sign-Up</a></li>
+      								<li ><a href="#">Sign-Up</a></li>
       								<li class = "divider-vertical"></li>
       							    <li><a href = "#">Sign-In</a></li>
     				  	  </ul>
@@ -107,41 +130,37 @@
 	  			 </ul>	
 	  		</div>
 	 
-	  		<div class = "span5">
-	  			<form id="login" action="CheckId" method="POST" class = "form-horizontal">
+	  		<div class = "span5 form">
+	  			<form id="login" action="SignIn" method="POST" class = "form-horizontal">
 				
 					<div class="control-group">
     					<label class="control-label">Login as:</label>
     					<div class="controls">
-     					
-      						<div id="radio">
-    							<input type="radio" value = "Student" id="radio1" name="user_type" checked = "checked"/><label for="radio1">Student</label>
-    							<input type="radio" value = "College" id="radio2" name="user_type" /><label for="radio2">College</label>
-    							<input type="radio" value = "Company" id="radio3" name="user_type" /><label for="radio3">Company</label>
-  							</div>
-      											    					
-    					</div>
+     							<input type="radio" value = "Student"  name="user_type" checked = "checked"/>Student
+    							<input type="radio" value = "College"  name="user_type" />College
+    							<input type="radio" value = "Company"  name="user_type" />Company
+  						 </div>
   	
   					</div>
 				
 					<div class="control-group">
     					<label class="control-label">Registration ID:</label>
     					<div class="controls">
-      						<input type="text" name="user_id">
+      						<input type="text" name="user_id" >
     					</div>
   					</div>
 				
 					<div class="control-group">
     					<label class="control-label">Password:</label>
     					<div class="controls">
-      						<input type="password" name="user_password">
+      						<input type="password" name="user_password" >
     					</div>
   					</div>
   				
   					<div class = "control-group">
   						<div class = "controls">
   							<input type="Submit" value="Sign In" class="btn btn-primary" > 
-  							<input type="Submit" value="Sign Up" class="btn btn-primary" > 
+  							<input type="Button" value="Sign Up" class="btn btn-primary" onclick = render('SignUp')> 
   						</div>
   					</div>
 				</form>
@@ -149,6 +168,10 @@
 			</div> 
         </div>
     </div>
-		
+	
+	<div class="navbar navbar-fixed-bottom footer">
+			
+  	</div>
+	
 </body>
 </html>

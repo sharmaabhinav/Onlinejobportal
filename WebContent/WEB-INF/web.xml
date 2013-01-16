@@ -10,31 +10,23 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   <servlet>
-    <servlet-name>MyClass</servlet-name>
-    <servlet-class>com.srk.pkg.MyClass</servlet-class>
+    <description></description>
+    <display-name>SignIn</display-name>
+    <servlet-name>SignIn</servlet-name>
+    <servlet-class>alluser.SignIn</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>MyClass</servlet-name>
-    <url-pattern>/MyClass</url-pattern>
+    <servlet-name>SignIn</servlet-name>
+    <url-pattern>/SignIn</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>Mine</display-name>
-    <servlet-name>Mine</servlet-name>
-    <servlet-class>Mine</servlet-class>
+    <display-name>SignUp</display-name>
+    <servlet-name>SignUp</servlet-name>
+    <servlet-class>student.SignUp</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Mine</servlet-name>
-    <url-pattern>/Mine</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>Mine1</display-name>
-    <servlet-name>Mine1</servlet-name>
-    <servlet-class>Mine</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Mine1</servlet-name>
-    <url-pattern>/Mine1</url-pattern>
+    <servlet-name>SignUp</servlet-name>
+    <url-pattern>/SignUp</url-pattern>
   </servlet-mapping>
 </web-app>
